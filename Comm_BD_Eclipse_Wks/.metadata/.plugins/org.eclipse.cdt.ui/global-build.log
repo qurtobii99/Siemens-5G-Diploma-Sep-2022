@@ -1,41 +1,16 @@
-10:23:40 **** Rebuild of configuration Debug for project Comm_BD ****
+11:11:44 **** Rebuild of configuration Debug for project Comm_BD ****
 Info: Internal Builder is used for build
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Demodulator.o" "..\\src\\Demodulator.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication_System_Blocks.o" "..\\src\\Communication_System_Blocks.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\CyclicPrefixAdder.o" "..\\src\\CyclicPrefixAdder.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Descrambler.o" "..\\src\\Descrambler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Decoder.o" "..\\src\\Decoder.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Modulator.o" "..\\src\\Modulator.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Demapper.o" "..\\src\\Demapper.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Encoder.o" "..\\src\\Encoder.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\CyclicPrefixAdder.o" "..\\src\\CyclicPrefixAdder.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication_System_Blocks.o" "..\\src\\Communication_System_Blocks.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Decoder.o" "..\\src\\Decoder.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AWGNChannel.o" "..\\src\\AWGNChannel.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Descrambler.o" "..\\src\\Descrambler.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\CyclicPrefixRemover.o" "..\\src\\CyclicPrefixRemover.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Demodulator.o" "..\\src\\Demodulator.cpp" 
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Modulator.o" "..\\src\\Modulator.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Mapper.o" "..\\src\\Mapper.cpp" 
 g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Scrambler.o" "..\\src\\Scrambler.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AWGNChannel.o" "..\\src\\AWGNChannel.cpp" 
+g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\CyclicPrefixRemover.o" "..\\src\\CyclicPrefixRemover.cpp" 
 g++ -o Comm_BD.exe "src\\AWGNChannel.o" "src\\Communication_System_Blocks.o" "src\\CyclicPrefixAdder.o" "src\\CyclicPrefixRemover.o" "src\\Decoder.o" "src\\Demapper.o" "src\\Demodulator.o" "src\\Descrambler.o" "src\\Encoder.o" "src\\Mapper.o" "src\\Modulator.o" "src\\Scrambler.o" 
 Info: Nothing to build for Comm_BD
-Info: Nothing to build for Comm_BD
-Info: Nothing to build for Comm_BD
-10:35:59 **** Incremental Build of configuration Debug for project Comm_BD ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AWGNChannel.o" "..\\src\\AWGNChannel.cpp" 
-..\src\AWGNChannel.cpp: In member function 'complexNumber AWGNChannel::AWGNChannel_NoiseCalculation(float64, float64)':
-..\src\AWGNChannel.cpp:40:40: error: 'noise' cannot be used as a function
-   40 |         complexNoise.imaginary = noise (random2 % 10);
-      |                                  ~~~~~~^~~~~~~~~~~~~~
-10:36:18 **** Incremental Build of configuration Debug for project Comm_BD ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AWGNChannel.o" "..\\src\\AWGNChannel.cpp" 
-g++ -o Comm_BD.exe "src\\AWGNChannel.o" "src\\Communication_System_Blocks.o" "src\\CyclicPrefixAdder.o" "src\\CyclicPrefixRemover.o" "src\\Decoder.o" "src\\Demapper.o" "src\\Demodulator.o" "src\\Descrambler.o" "src\\Encoder.o" "src\\Mapper.o" "src\\Modulator.o" "src\\Scrambler.o" 
-10:38:45 **** Incremental Build of configuration Debug for project Comm_BD ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\AWGNChannel.o" "..\\src\\AWGNChannel.cpp" 
-..\src\AWGNChannel.cpp: In member function 'complexNumber AWGNChannel::AWGNChannel_NoiseCalculation(float64, float64)':
-..\src\AWGNChannel.cpp:32:13: warning: unused variable 'random1' [-Wunused-variable]
-   32 |         int random1 = rand();
-      |             ^~~~~~~
-g++ -o Comm_BD.exe "src\\AWGNChannel.o" "src\\Communication_System_Blocks.o" "src\\CyclicPrefixAdder.o" "src\\CyclicPrefixRemover.o" "src\\Decoder.o" "src\\Demapper.o" "src\\Demodulator.o" "src\\Descrambler.o" "src\\Encoder.o" "src\\Mapper.o" "src\\Modulator.o" "src\\Scrambler.o" 
-10:40:39 **** Incremental Build of configuration Debug for project Comm_BD ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication_System_Blocks.o" "..\\src\\Communication_System_Blocks.cpp" 
-g++ -o Comm_BD.exe "src\\AWGNChannel.o" "src\\Communication_System_Blocks.o" "src\\CyclicPrefixAdder.o" "src\\CyclicPrefixRemover.o" "src\\Decoder.o" "src\\Demapper.o" "src\\Demodulator.o" "src\\Descrambler.o" "src\\Encoder.o" "src\\Mapper.o" "src\\Modulator.o" "src\\Scrambler.o" 

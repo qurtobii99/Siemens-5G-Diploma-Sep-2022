@@ -20,8 +20,9 @@ private:
 public:
 	Decoder();
 	~Decoder();
-	void turnOnDecoder(std::bitset<DECODER_IN_BITS> inputBits);
-	std::bitset<DECODER_OUT_BITS> getDecoderOutput();
+	void Decoder_TurnOn(std::bitset<DECODER_IN_BITS> inputBits);
+	std::bitset<DECODER_OUT_BITS> Decoder_GetOutput();
+	void Decoder_PrintOutput();
 };
 
 #endif /* DECODER_H_ */

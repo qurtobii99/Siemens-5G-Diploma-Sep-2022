@@ -1,7 +1,1 @@
-10:40:39 **** Incremental Build of configuration Debug for project Comm_BD ****
-Info: Internal Builder is used for build
-g++ -O0 -g3 -Wall -c -fmessage-length=0 -o "src\\Communication_System_Blocks.o" "..\\src\\Communication_System_Blocks.cpp" 
-g++ -o Comm_BD.exe "src\\AWGNChannel.o" "src\\Communication_System_Blocks.o" "src\\CyclicPrefixAdder.o" "src\\CyclicPrefixRemover.o" "src\\Decoder.o" "src\\Demapper.o" "src\\Demodulator.o" "src\\Descrambler.o" "src\\Encoder.o" "src\\Mapper.o" "src\\Modulator.o" "src\\Scrambler.o" 
-
-10:40:43 Build Finished. 0 errors, 0 warnings. (took 4s.216ms)
-
+Info: Nothing to build for Comm_BD

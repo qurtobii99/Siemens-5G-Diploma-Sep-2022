@@ -17,7 +17,7 @@ Decoder::~Decoder() {
 
 }
 
-void Decoder::turnOnDecoder(std::bitset<DECODER_IN_BITS> inputBits)
+void Decoder::Decoder_TurnOn(std::bitset<DECODER_IN_BITS> inputBits)
 {
 	inputBits.set(0);
 	for(uint8 i=0;i<DECODER_OUT_BITS;i++)
@@ -40,7 +40,21 @@ void Decoder::turnOnDecoder(std::bitset<DECODER_IN_BITS> inputBits)
 		checkBitSetCounter=3;
 	}
 }
-std::bitset<DECODER_OUT_BITS> Decoder::getDecoderOutput(){
+std::bitset<DECODER_OUT_BITS> Decoder::Decoder_GetOutput(){
 	return decoderOutputBits;
 }
+
+void Decoder::Decoder_PrintOutput()
+{
+	std::cout<< "Decoder output: " << decoderOutputBits <<std::endl;
+    std::cout<<"----------------------------------------"<< std::endl;
+}
+
+
+
+
+
+
+
+
 

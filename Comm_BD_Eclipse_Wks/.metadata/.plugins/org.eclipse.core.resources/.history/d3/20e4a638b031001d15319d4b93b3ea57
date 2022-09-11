@@ -1,0 +1,27 @@
+/*
+ * Decoder.h
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#ifndef DECODER_H_
+#define DECODER_H_
+
+#include <bits/stdc++.h>
+#include "preprocessors.h"
+#include <iostream>
+#include "definedTypes.h"
+
+class Decoder {
+private:
+	std::bitset<DECODER_OUT_BITS> decoderOutputBits;
+	uint8 checkBitSetCounter = 3;
+public:
+	Decoder();
+	~Decoder();
+	void turnOnDecoder(std::bitset<DECODER_IN_BITS> inputBits);
+	std::bitset<DECODER_OUT_BITS> getDecoderOutput();
+};
+
+#endif /* DECODER_H_ */

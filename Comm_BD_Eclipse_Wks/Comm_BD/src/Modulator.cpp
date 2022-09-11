@@ -59,4 +59,5 @@ void Modulator::Modulator_PrintOutput()
     	std::cout<< "(" << modulatorOutput[i].real << ","<<\
     			modulatorOutput[i].imaginary <<")" << std::endl;
     }
+    std::cout<<"----------------------------------------"<< std::endl;
 }

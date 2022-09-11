@@ -41,6 +41,7 @@ std::bitset<DEMAPPER_OUT_BITS> Demapper::Demapper_GetOut()
 void Demapper::Demapper_PrintOutput()
 {
 	std::cout<< "Demapper output: " << demapperOut <<std::endl;
+    std::cout<<"----------------------------------------"<< std::endl;
 
 }
 

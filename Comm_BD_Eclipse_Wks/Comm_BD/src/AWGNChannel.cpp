@@ -36,7 +36,7 @@ complexNumber AWGNChannel::AWGNChannel_NoiseCalculation(float64 snr, float64 sig
 	float64 noisePower =(signalLinearPower / pow(10,(snr/10)));
 	float64 noise = sqrt(noisePower/ 2);
 	complexNumber complexNoise;
-	complexNoise.real = noise / (random2%3);
+	complexNoise.real = noise / (random1%2);
 	complexNoise.imaginary = noise / (random2 % 2);
 	return complexNoise;
 }

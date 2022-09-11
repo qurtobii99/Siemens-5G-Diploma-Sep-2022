@@ -39,12 +39,13 @@ int main() {
 
     std::cout << "Encoder input: " << encoderInputBits <<std::endl;
     encoderObj.Encoder_TurnOn(encoderInputBits);
+    encoderObj.Encoder_PrintOutput();
 
 
-    /*
-	//DecoderObj.turnOnDecoder(encoderObj.getEncoderOutput());
-    std::cout<< "Decoder output: " << DecoderObj.getDecoderOutput()<<std::endl;
-    */
+    //Test the Decoder using the o/p of the encoder
+	DecoderObj.Decoder_TurnOn(encoderObj.Encoder_GetOutput());
+    DecoderObj.Decoder_PrintOutput();
+
 
     MapperObj.Mapper_TurnOn(encoderObj.Encoder_GetOutput());
     MapperObj.Mapper_PrintOutput();

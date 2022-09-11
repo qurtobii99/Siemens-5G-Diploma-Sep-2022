@@ -1,0 +1,90 @@
+//============================================================================
+// Name        : Communication_System_Blocks.cpp
+// Author      : Ezz Alqurtubi
+// Version     :
+// Copyright   : Your copyright notice
+// Description :
+//============================================================================
+
+#include <iostream>
+#include "../headers/definedTypes.h"
+#include "../headers/Encoder.h"
+#include "../headers/Decoder.h"
+#include "../headers/Mapper.h"
+#include "../headers/Demapper.h"
+#include "../headers/Scrambler.h"
+#include "../headers/Descrambler.h"
+#include "../headers/Modulator.h"
+#include "../headers/Demodulator.h"
+#include "../headers/CyclicPrefixAdder.h"
+#include "../headers/CyclicPrefixRemover.h"
+//#include "../headers/AWGNChannel.h"
+
+
+int main() {
+
+	std::bitset <ENCODER_IN_BITS> encoderInputBits(123456);
+
+	Encoder encoderObj;
+    Decoder DecoderObj;
+    Mapper MapperObj;
+    Demapper DemapperObj;
+    Scrambler scramblerObj;
+    Descrambler DescramblerObj;
+    Modulator ModulatorObj;
+    Demodulator DemodulatorObj;
+    CyclicPrefixAdder CPAObj;
+    CyclicPrefixRemover CPRObj;
+    //AWGNChannel AwgnObj;
+
+    std::cout << "Encoder input: " << encoderInputBits <<std::endl;
+    encoderObj.Encoder_TurnOn(encoderInputBits);
+
+
+
+	DecoderObj.turnOnDecoder(encoderObj.getEncoderOutput());
+    std::cout<< "Decoder output: " << DecoderObj.getDecoderOutput()<<std::endl;
+
+
+    MapperObj.Mapper_TurnOn(encoderObj.Encoder_GetOutput());
+    MapperObj.Mapper_PrintOutput();
+
+    //Test the Demapper using the o/p of the mapper
+    DemapperObj.Demapper_TurnOn(MapperObj.Mapper_GetOutput());
+    DemapperObj.Demapper_PrintOutput();
+
+    scramblerObj.Scrambler_TurnOn(MapperObj.Mapper_GetOutput());
+    scramblerObj.Scrambler_PrintOutput();
+
+    //Test the Descrambler using the o/p of the scrambler
+    DescramblerObj.Descrambler_TurnOn(scramblerObj.Scrambler_GetOutput());
+    DescramblerObj.Descrambler_PrintOutput();
+
+    ModulatorObj.Modulator_TurnOn(scramblerObj.Scrambler_GetOutput());
+    ModulatorObj.Modulator_PrintOutput();
+
+    //Test the Demodulator using the o/p of the Modulator
+ 	DemodulatorObj.Demodulator_TurnOn(ModulatorObj.Modulator_GetOutput());
+    DemodulatorObj.Demodulator_PrintOutput();
+
+    CPAObj.CyclicPrefixAdder_TurnOn(ModulatorObj.Modulator_GetOutput());
+    CPAObj.CyclicPrefixAdder_PrintOutput();
+
+    //Test the CPR using the o/p of the CPA.
+    CPRObj.CyclicPrefixRemover_TurnOn(CPAObj.CyclicPrefixAdder_GetOutput());
+    CPRObj.CyclicPrefixRemover_PrintOutput();
+
+//    AwgnObj.AWGNChannel_TurnOn(CPAObj.CyclicPrefixAdder_GetOutput(), 3);
+//    AwgnObj.AWGNChannel_PrintOutput();
+
+	return 0;
+}
+
+
+
+
+
+
+
+
+
