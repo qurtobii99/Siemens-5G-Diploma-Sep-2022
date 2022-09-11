@@ -1,0 +1,53 @@
+/*
+ * Mapper.cpp
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#include "../headers/Mapper.h"
+
+Mapper::Mapper() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Mapper::~Mapper() {
+	// TODO Auto-generated destructor stub
+}
+
+void Mapper::Mapper_TurnOn(std::bitset<MAPPER_IN_BITS> inputBits)
+{
+	for(int i=0;i<8;i++)
+	{
+		for(int j=0;j<8;j++)
+		{
+			if(inputBits[i*8+j]==1)
+				mapperArray[i] |= (1<<j);
+		}
+	}
+
+}
+
+uint8* Mapper::Mapper_GetOutput()
+{
+	return mapperArray;
+}
+
+void Mapper::Mapper_PrintOutput()
+{
+    std::cout << "Mapper output: " << std::endl;
+    for(int i=0;i<8;i++)
+    {
+    	for(int j=7;j>=0;j--)
+    		std::cout<< ((mapperArray[i] & (1U << j)) >> j);
+    	std::cout<<std::endl;
+    }
+
+    std::cout<<"----------------------------------------"<< std::endl;
+}
+
+
+
+
+

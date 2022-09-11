@@ -1,0 +1,30 @@
+/*
+ * Modulator.h
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#ifndef MODULATOR_H_
+#define MODULATOR_H_
+
+#include "preprocessors.h"
+#include <iostream>
+#include "definedTypes.h"
+
+class Modulator {
+private:
+	complexNumber modulatorOutput[NUMBER_OF_IQ_SAMPLES];
+public:
+	Modulator();
+	~Modulator();
+	void turnOnModulator(uint8* scramblerOutputPtr);
+
+	/* This function return pointer to the array of structure, contains the mapping of each 2 bits,
+			to the corressponding IQ samples */
+	const complexNumber* getModulatorOutput();
+
+	void Modulator_PrintOutput(const complexNumber* ptr2ComplexStruct);
+};
+
+#endif /* MODULATOR_H_ */

@@ -1,0 +1,28 @@
+/*
+ * Encoder.h
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#ifndef ENCODER_H_
+#define ENCODER_H_
+
+#include <bits/stdc++.h>
+#include "preprocessors.h"
+#include <iostream>
+class Encoder {
+private:
+	std::bitset<ENCODER_OUT_BITS> encoderOutputBits;
+public:
+	Encoder();
+	~Encoder();
+
+    /* Decoder Operation (Decide whether the transmitted bit is 0 or 1) */
+    /* Notice that the last bit (whose index 63) will be ignored */
+	void Encoder_TurnOn(std::bitset<ENCODER_IN_BITS> encoderInputBits);
+	std::bitset<ENCODER_OUT_BITS> Encoder_GetOutput();
+	void Encoder_PrintOutput();
+};
+
+#endif /* ENCODER_H_ */

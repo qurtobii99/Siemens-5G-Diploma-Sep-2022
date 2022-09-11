@@ -1,0 +1,45 @@
+/*
+ * Descrambler.h
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#ifndef DESCRAMBLER_H_
+#define DESCRAMBLER_H_
+
+#include "../headers/preprocessors.h"
+#include <iostream>
+#include "definedTypes.h"
+
+class Descrambler {
+private:
+	uint8 descramblerArrayOut[DESCRAMPER_ARRAY_SIZE]={0};
+public:
+	Descrambler();
+	~Descrambler();
+	void Descrambler_TurnOn(uint8* demoudulatorOut);
+	uint8* Descrambler_GetOutput();
+	void Descrambler_PrintOutput();
+};
+
+#endif /* DESCRAMBLER_H_ */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,3 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">&#x0A;<refactoring comment="Delete resource &apos;Comm_BD/src/Comm_BD.cpp&apos;" deleteContents="false" description="Delete resource &apos;Comm_BD/src/Comm_BD.cpp&apos;" element1="/Comm_BD/src/Comm_BD.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="1" stamp="1662834869020"/>&#x0A;<refactoring comment="Delete 2 resources" deleteContents="false" description="Delete 2 resources" element1="/Comm_BD/headers/Decoder.cpp" element2="/Comm_BD/headers/Encoder.cpp" flags="7" id="org.eclipse.ltk.core.refactoring.delete.resources" resources="2" stamp="1662834890923"/>
+</session>

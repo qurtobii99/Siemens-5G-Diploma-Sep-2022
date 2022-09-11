@@ -1,0 +1,62 @@
+/*
+ * Modulator.cpp
+ *
+ *  Created on: Sep 8, 2022
+ *      Author: qurtobii99
+ */
+
+#include "../headers/Modulator.h"
+
+Modulator::Modulator() {
+	// TODO Auto-generated constructor stub
+
+}
+
+Modulator::~Modulator() {
+	// TODO Auto-generated destructor stub
+}
+
+void Modulator::Modulator_TurnOn(uint8* scramblerOutputPtr)
+{
+	for(int i=0;i<8;i++)
+	{
+		for(int j=0;j<4;j++)
+		{
+			if(((scramblerOutputPtr[i] & (3U<<j*2)) >> j*2) == FIRST_QUAD)
+			{
+				modulatorOutput[i*4+j].real = 0.707;
+				modulatorOutput[i*4+j].imaginary = 0.707;
+			}
+			else if(((scramblerOutputPtr[i] & (3U<<j*2)) >> j*2) == SECOND_QUAD)
+			{
+				modulatorOutput[i*4+j].real = -0.707;
+				modulatorOutput[i*4+j].imaginary = 0.707;
+			}
+			else if(((scramblerOutputPtr[i] & (3U<<j*2)) >> j*2) == THIRD_QUAD)
+			{
+				modulatorOutput[i*4+j].real = -0.707;
+				modulatorOutput[i*4+j].imaginary = -0.707;
+			}
+			else
+			{
+				modulatorOutput[i*4+j].real = 0.707;
+				modulatorOutput[i*4+j].imaginary = -0.707;
+			}
+
+		}
+	}
+}
+
+const complexNumber* Modulator::Modulator_GetOutput()
+{
+	return modulatorOutput;
+}
+void Modulator::Modulator_PrintOutput(const complexNumber* ptr2ComplexStruct)
+{
+    std::cout << "Modulator output: " << std::endl;
+    for(int i=0;i<32;i++)
+    {
+    	std::cout<< "(" << ptr2ComplexStruct[i].real << ","<<\
+    			ptr2ComplexStruct[i].imaginary <<")" << std::endl;
+    }
+}

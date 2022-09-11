@@ -1,0 +1,31 @@
+/*
+ * AWGNChannel.h
+ *
+ *  Created on: Sep 10, 2022
+ *      Author: qurtobii99
+ */
+
+#ifndef AWGNCHANNEL_H_
+#define AWGNCHANNEL_H_
+
+#include "preprocessors.h"
+#include "definedTypes.h"
+
+
+class AWGNChannel {
+private:
+	complexNumber AWGNChannelOutput[AWGN_CHANNEL_OUTPUT];
+
+	/* The following functions are private, because they will only be used by functions
+		inside this class */
+	float64 AWGNChannel_SignalLinearPower(complexNumber signal);
+	complexNumber AWGNChannel_NoiseCalculation(float64 snr, float64 signalLinearPower);
+public:
+	AWGNChannel();
+	~AWGNChannel();
+	void AWGNChannel_TurnOn(const complexNumber* ptr2CPAOutput, int snr);
+	const complexNumber* AWGNChannel_GetOutput();
+	void AWGNChannel_PrintOutput();
+};
+
+#endif /* AWGNCHANNEL_H_ */
